@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>{{= it.defaultPageTitle }}</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<style>
+		{{=it.criticalCss}}
+	</style>
+
+	{{? !it.deferCss }}
+		<link rel="stylesheet" href="{{=it.mainCssUrl}}" />
+	{{?}}
+
+	{{? it.deferJs || it.deferCss || it.deferFonts }}
+	<script>
+		/* Defer scripts and fonts */
+		/* Code from Pony Foo */
+		/* http://ponyfoo.com/articles/critical-path-performance-optimization */
+		(function(window, document) {
+			var jsUrl = '{{= it.jsUrl }}';
+			var fontUrl = 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700';
+			var mainCssUrl = '{{= it.mainCssUrl }}';
+
+			function inject() {
+				var head = document.getElementsByTagName('head')[0];
+
+				/* Inject JS */
+				{{? it.deferJs }}
+					var scriptElement = document.createElement('script');
+					scriptElement.src = jsUrl;
+					document.body.appendChild(scriptElement);
+				{{?}}
+
+				/* Inject fonts */
+				{{? it.deferFonts }}
+					var fontElement = document.createElement('link');
+					fontElement.rel = 'stylesheet';
+					fontElement.href = fontUrl;
+					head.appendChild(fontElement);
+				{{?}}
+
+				/* Inject main styles */
+				{{? it.deferCss }}
+					var stylesElement = document.createElement('link');
+					stylesElement.rel = 'stylesheet';
+					stylesElement.href = mainCssUrl;
+					head.appendChild(stylesElement);
+				{{?}}
+			}
+
+			/* Add event listener */
+			if (window.addEventListener) {
+				window.addEventListener('load', inject, false);
+			} else if (window.attachEvent) {
+				window.attachEvent('onload', inject);
+			} else {
+				window.onload = inject;
+			}
+		})(window, document);
+	</script>
+	{{?}}
+
+	{{? it.deferFonts }}
+	<noscript>
+	{{?}}
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' />
+
+	{{? it.deferFonts }}
+	</noscript>
+	{{?}}
+
+	{{= it.applicationHead }}
+</head>
+<body>
+
+	<div id="tollanApp" class="container">
+		{{=it.element}}
+	</div>
+
+	{{? it.haveVendorJs }}
+		<script src="{{= it.vendorJsUrl }}"></script>
+	{{?}}
+	{{? !it.deferJs }}
+		<script src="{{= it.jsUrl }}"></script>
+	{{?}}
+
+	{{= it.applicationBody }}
+
+</body>
+</html>

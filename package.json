@@ -20,7 +20,9 @@
     "express": "~4.11.2",
     "express-bunyan-logger": "~1.1.1",
     "promise": "~6.1.0",
-    "xhr": "~2.0.1"
+    "xhr": "~2.0.1",
+    "promise": "~6.1.0",
+    "html": "0.0.7"
   },
   "peerDependencies": {
     "react": "^0.12.2",

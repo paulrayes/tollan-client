@@ -1,0 +1,16 @@
+{
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"rules": {
+		"indent": [2, "tab"],
+		"quotes": [1, "single"],
+		"brace-style": [2, "1tbs"],
+		"comma-style": [2, "last"],
+		"no-unused-vars": [0],
+		"no-use-before-define": "nofunc",
+		"no-underscore-dangle": false,
+		"no-path-concat": false
+	}
+}

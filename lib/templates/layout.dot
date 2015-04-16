@@ -9,6 +9,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	{{? it.loadFonts }}
+		<script>{{=it.fontloader}}</script>
+	{{?}}
+
 	<style>
 		{{=it.criticalCss}}
 	</style>
@@ -24,7 +28,7 @@
 		/* http://ponyfoo.com/articles/critical-path-performance-optimization */
 		(function(window, document) {
 			var jsUrl = '{{= it.jsUrl }}';
-			var fontUrl = 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700';
+			/*var fontUrl = 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700';*/
 			var mainCssUrl = '{{= it.mainCssUrl }}';
 
 			function inject() {
@@ -37,13 +41,13 @@
 					document.body.appendChild(scriptElement);
 				{{?}}
 
-				/* Inject fonts */
+				/* Inject fonts * /
 				{{? it.deferFonts }}
 					var fontElement = document.createElement('link');
 					fontElement.rel = 'stylesheet';
 					fontElement.href = fontUrl;
 					head.appendChild(fontElement);
-				{{?}}
+				{{?}}*/
 
 				/* Inject main styles */
 				{{? it.deferCss }}

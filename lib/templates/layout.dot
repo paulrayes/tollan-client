@@ -88,6 +88,8 @@
 		{{=it.element}}
 	</div>
 
+	<script>var tollanData = {{= it.data }}</script>
+
 	{{? it.haveVendorJs }}
 		<script src="{{= it.vendorJsUrl }}"></script>
 	{{?}}

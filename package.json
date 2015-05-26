@@ -14,7 +14,8 @@
   },
   "browserify": {
     "transform": [
-      "babelify"
+      "babelify",
+      "isbrowser"
     ]
   },
   "dependencies": {
@@ -32,9 +33,13 @@
     "express": "~4.11.2",
     "express-bunyan-logger": "~1.1.1",
     "html": "0.0.7",
+    "isbrowser": "0.0.4",
+    "logule": "^2.0.1",
     "object-assign": "^2.0.0",
     "promise": "~6.1.0",
     "redis": "^0.12.1",
+    "request": "^2.55.0",
+    "winston": "^1.0.0",
     "wofffontloader": "^0.1.0",
     "xhr": "~2.0.1"
   },

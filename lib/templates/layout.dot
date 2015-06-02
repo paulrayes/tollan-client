@@ -9,6 +9,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	<!--[if lt IE 9]>
+		<script>
+			document.createElement('header');
+			document.createElement('nav');
+			document.createElement('section');
+			document.createElement('article');
+			document.createElement('aside');
+			document.createElement('footer');
+		</script>
+	<![endif]-->
+
 	{{? it.loadFonts }}
 		<script>{{=it.fontloader}}</script>
 	{{?}}
@@ -83,10 +94,9 @@
 	{{= it.applicationHead }}
 </head>
 <body>
-
-	<div id="tollanApp" class="container">
-		{{=it.element}}
-	</div>
+	<noscript><div class="Alert-error" style="text-align:center;">Your browser does not have Javascript enabled. You may be able to view this website, but dynamic features such as the contact page will not work. Please <a href="https://whatbrowser.org/" target="_blank">upgrade your browser</a>.</div></noscript>
+	<div id="tollan-jsError" class="Alert-error" style="text-align: center; display: none;"></div>
+	<div id="tollanApp" class="container">{{=it.element}}</div>
 
 	<script>var tollanData = {{= it.data }}</script>
 

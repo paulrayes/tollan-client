@@ -43,10 +43,6 @@
     "wofffontloader": "^0.1.0",
     "xhr": "~2.0.1"
   },
-  "peerDependencies": {
-    "react": "^0.12.2",
-    "react-router": "^0.11.6"
-  },
   "devDependencies": {
     "gaze-cli": "^0.1.0",
     "eslint": "^0.15.0"

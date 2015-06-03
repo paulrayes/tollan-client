@@ -1,6 +1,6 @@
 {
   "name": "tollan-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Front-end library for developing Tollan applications",
   "author": "Paul Rayes",
   "license": "apache-2.0",

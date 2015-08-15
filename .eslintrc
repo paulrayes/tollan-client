@@ -1,16 +1,29 @@
 {
 	"env": {
 		"browser": true,
-		"node": true
+		"node": true,
+		"es6": true
+	},
+	"ecmaFeatures": {
+		"classes": true,
+		"arrowFunctions": true,
+		"blockBindings": true,
+		"forOf": true,
+		"generators": true,
+		"spread": true,
+		"templateStrings": true,
+		"jsx": true
 	},
 	"rules": {
 		"indent": [2, "tab"],
-		"quotes": [1, "single"],
+		"quotes": [0, "single"],
 		"brace-style": [2, "1tbs"],
 		"comma-style": [2, "last"],
 		"no-unused-vars": [0],
-		"no-use-before-define": "nofunc",
-		"no-underscore-dangle": false,
-		"no-path-concat": false
+		"no-use-before-define": [2, "nofunc"],
+		"no-underscore-dangle": [0],
+		"no-path-concat": [0],
+		"new-cap": [0],
+		"eol-last": [0]
 	}
 }

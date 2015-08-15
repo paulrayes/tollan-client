@@ -100,9 +100,9 @@
 
 	<script>var tollanData = {{= it.data }}</script>
 
-	{{? it.haveVendorJs }}
+	<!--{ {? it.haveVendorJs }}
 		<script src="{{= it.vendorJsUrl }}"></script>
-	{{?}}
+	{ {?}}-->
 	{{? !it.deferJs }}
 		<script src="{{= it.jsUrl }}"></script>
 	{{?}}
